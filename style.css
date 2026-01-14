@@ -571,7 +571,7 @@ body {
   font-family: var(--font-heading);
   font-size: 36px;
   color: var(--accent-cream);
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--accent-cream);
   display: inline-block;
   padding-bottom: 5px;
   margin-bottom: 20px;
