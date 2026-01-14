@@ -1,0 +1,663 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Palet Warna Sesuai Desain */
+  --primary-teal: #00afb9; /* Warna Background Utama */
+  --accent-cream: #fdfcdc; /* Warna Background Section Konsep */
+  --accent-peach: #fed9b7; /* Warna Background Menu */
+  --card-pink: #f07167;
+  --text-dark: #005b76; /* Warna Text Gelap/Footer */
+  --text-white: #ffffff;
+
+  /* Font Variables */
+  --font-heading: "Montserrat", sans-serif; /* Font Tebal/Judul */
+  --font-body: "Poppins", sans-serif; /* Font Biasa */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--primary-teal); /* Default background Teal */
+  color: var(--text-white);
+  overflow-x: hidden; /* Mencegah scroll samping */
+}
+
+/* NAVBAR STYLING */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: transparent; /* Agar menyatu dengan background teal */
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 55px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-family: "Brush Script MT", cursive;
+  font-size: 48px;
+  margin-left: 14px;
+  margin-bottom: -4px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-left: 940px;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+  transform: translateY(6px);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-white);
+  font-weight: 500;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.btn-visit {
+  background-color: var(--accent-cream);
+  color: var(--text-dark);
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  transition: transform 0.3s;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.btn-visit:hover {
+  transform: scale(1.05);
+}
+
+/* HERO SECTION STYLING */
+.hero-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/last summer.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(16px);
+  transform: scale(1.1);
+  z-index: -2;
+}
+
+.hero-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 175, 185, 0.4);
+  z-index: -1;
+}
+
+.hero {
+  position: relative;
+  height: 85vh; /* Mengambil 85% tinggi layar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+/* Teks Raksasa Outline "LAST SUMMER" */
+.big-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12vw; /* Ukuran responsif mengikuti lebar layar */
+  color: transparent; /* Agar transparan tengahnya */
+  -webkit-text-stroke: 10px var(--accent-cream); /* Garis tepi putih */
+  position: absolute;
+  top: 174px;
+  left: 50%;
+  transform: translate(-50%, -67%); /* Geser agak ke atas sedikit */
+  z-index: 0; /* Di belakang gelas */
+  width: 100%;
+  line-height: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Di depan teks besar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Gambar Gelas */
+.main-cup-container {
+  position: relative;
+}
+
+.main-cup {
+  height: 600px;
+  object-fit: contain;
+  transform: translateY(40px);
+  filter: drop-shadow(
+    0 10px 20px rgba(0, 0, 0, 0.2)
+  ); /* Bayangan agar pop-up */
+}
+
+/*Badge Tanggal (Est. 10 Agustus)*/
+.date-badge {
+  position: absolute;
+  top: 100%;
+  left: 47%;
+  background: var(--accent-cream);
+  color: var(--primary-teal);
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  padding: 10px 28px;
+}
+
+/* Bubble Kiri (Kotak Teks) */
+/* .bubble-left {
+  position: absolute;
+  left: -5%;
+  top: 40%;
+  background: var(--accent-cream);
+  border: 6px solid var(--primary-teal);
+  padding: 20px;
+  border-radius: 20px;
+  width: 300px;
+  text-align: left;
+  color: var(--primary-teal);
+  font-size: 22px;
+  font-weight: 500;
+} */
+
+/* Ujung Bubble Bicara */
+/* .bubble-tail-left {
+  position: absolute;
+  bottom: -20px;
+  right: 40px;
+  width: 30px;
+  height: 30px;
+  background: var(--accent-cream); /* Sama dengan background utama */
+/* border-right: 7px solid var(--primary-teal);
+  border-bottom: 7px solid var(--primary-teal);
+  transform: rotate(45deg);
+} */
+
+/* Elemen Kanan (Smoothies label) */
+/* .bubble-right {
+  position: absolute;
+  right: 15%;
+  top: 40%;
+  text-align: left;
+}
+
+.bubble-right h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  border-bottom: 2px solid white;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* Garis penunjuk ke gelas */
+/* .line-connector {
+  width: 100px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: -110px;
+  top: 50%;
+} */
+
+/* .fruit-deco {
+  width: 200px;
+  display: block;
+  margin-top: 10px;
+} */
+
+/* --- CONCEPT SECTION --- */
+.concept-section {
+  background-color: var(--accent-cream);
+  color: var(--text-dark);
+  padding: 80px 50px 30px; /* Jarak dalam */
+  display: flex; /* Agar berjejer 3 kolom */
+  justify-content: space-between;
+  align-items: flex-start; /* Rata atas */
+  gap: 40px;
+
+  /* Membuat lengkungan di atas agar tidak kaku */
+  border-radius: 60px 60px 0 0;
+  margin-top: -50px; /* Menarik section ke atas menumpuk hero sedikit */
+  position: relative;
+  z-index: 10; /* Agar berada di atas elemen hero */
+}
+
+/* Styling untuk Kolom Kiri & Kanan */
+.col-side {
+  flex: 1; /* Lebar 1 bagian */
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+.section-title {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  font-size: 42px;
+  margin-top: -56px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.highlight-text {
+  color: var(--text-dark); /* Warna agak coklat pudar sesuai desain */
+  margin-top: -14px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+/* Styling Kolom Tengah */
+.col-center {
+  flex: 0.5;
+  text-align: center;
+  transform: translateY(-80.5px);
+  height: 95px;
+  position: relative;
+  overflow: hidden; /* WAJIB */
+  clip-path: polygon(0% 0%, 100% 0%, 85% 100%, 15% 100%);
+  padding-top: 5px;
+}
+
+/* background blur layer */
+.col-center::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("images/last summer.png");
+  /* background-size: cover; */
+  background-position: right;
+  filter: blur(16px);
+  transform: scale(1.1); /* biar ga kepotong */
+  z-index: -1;
+}
+
+.col-center::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 175, 185, 0.4);
+  z-index: -1;
+}
+
+.center-subtitle {
+  font-family: "Agbalumo", cursive;
+  font-weight: 300;
+  color: var(--accent-cream);
+  font-size: 26px;
+  margin-bottom: -5px;
+}
+
+.center-title {
+  font-family: "Agbalumo", cursive;
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--accent-cream);
+  margin-bottom: 30px;
+}
+
+/* Container Kartu Pink */
+.cards-container {
+  display: flex;
+  gap: 26px;
+  justify-content: right;
+}
+
+.info-card {
+  flex: 0 0 42%;
+  background-color: var(--card-pink);
+  color: white;
+
+  min-height: 180px;
+  padding: 20px 10px;
+
+  border-radius: 15px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  box-shadow: 0 5px 15px rgba(255, 159, 137, 0.4);
+  transition: transform 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px); /* Efek naik saat di-hover */
+}
+
+.info-card h4 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.info-card p {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* --- MENU SECTION (REVISI GAMBAR) --- */
+.menu-section {
+  background-color: var(--accent-cream);
+  padding: 60px 50px 24px;
+  color: var(--text-dark);
+  border-radius: 0 0 60px 60px;
+  position: relative;
+  z-index: 5;
+  margin-top: -50px;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.menu-title-box {
+  display: inline-block; /* biar kotaknya ngikut isi */
+  padding: 26px 60px 40px;
+  border-radius: 30px;
+  background-color: var(--accent-peach); /* atau var(--accent-cream-soft) */
+  margin: 0 auto 40px auto; /* center + jarak ke grid */
+}
+
+.menu-title-box .section-title {
+  margin: 0;
+  text-align: center;
+  transform: translateY(-12px);
+}
+
+/* Grid Layout untuk Gambar */
+.menu-grid {
+  display: grid;
+  /* Membuat kolom otomatis (lebar minimal 300px per gambar) */
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 20px; /* Jarak antar gambar */
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Styling Bungkus Gambar */
+.menu-item {
+  display: block; /* Agar link membungkus gambar sepenuhnya */
+  border-radius: 15px;
+  overflow: hidden; /* Agar sudut gambar ikut melengkung */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white; /* Background putih kalau gambar transparan */
+}
+
+/* Efek saat mouse diarahkan (Hover) */
+.menu-item:hover {
+  transform: translateY(-10px); /* Gambar naik sedikit */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Bayangan makin tebal */
+  cursor: pointer;
+}
+
+/* Memastikan gambar responsif penuh */
+.menu-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Menutupi area tanpa gepeng */
+  display: block;
+}
+
+/* --- MINI GALLERY SECTION --- */
+.mini-gallery {
+  background-color: var(--primary-teal); /* Kembali ke warna utama */
+  padding: 60px 50px;
+  color: white;
+}
+
+.gallery-title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  margin-top: -20px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent-cream);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Kolom sejajar */
+  gap: 40px;
+}
+
+/* kotak pembungkus */
+.gallery-item {
+  border-radius: 30px;
+  overflow: hidden; /* WAJIB */
+  background: rgba(255, 255, 255, 0.15); /* biar semua keliatan rapi */
+}
+
+/* gambar */
+.gallery-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /* ⬅️ ini bikin cakep */
+  display: block;
+}
+
+/* --- FOOTER SECTION --- */
+.site-footer {
+  background-color: var(--accent-cream);
+  padding: 60px 50px 20px 50px;
+  color: var(--text-dark);
+}
+
+.footer-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1600px;
+  margin: 0 auto 40px auto;
+}
+
+/* Kotak Kiri: Special Offer (Peach) */
+.offer-box {
+  flex: 1.5; /* Lebar 1 bagian */
+  background-color: var(--accent-peach);
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.offer-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  color: var(--card-pink);
+}
+
+.percent {
+  font-size: 140px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.offer-header h3 {
+  font-family: var(--font-heading);
+  font-size: 60px;
+  line-height: 1.1;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.offer-item {
+  margin-bottom: 20px;
+  padding: 16px;
+}
+
+.offer-item h4 {
+  color: var(--text-dark);
+  font-family: var(--font-heading);
+  margin-bottom: 5px;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.offer-item p {
+  font-size: 28px;
+}
+
+/* Kotak Kanan: Contact (Dark Teal) */
+.contact-box {
+  flex: 2; /* Lebar 1.5 bagian (lebih lebar) */
+  background-color: #005f6b; /* Teal Gelap khusus footer */
+  color: white;
+  padding: 48px 60px 20px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  color: var(--accent-cream);
+  border-bottom: 2px solid white;
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.contact-box p {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: var(--accent-cream);
+  line-height: 1.6;
+}
+
+.owners {
+  font-size: 0.8rem;
+  margin-top: 20px;
+  opacity: 0.9;
+}
+
+/* --- LOCATION MAP --- */
+.map-section {
+  background-color: #004d57;
+  padding: 40px;
+  border-radius: 30px;
+  text-align: center;
+  max-width: 1600px;
+  margin: 0 auto 60px auto;
+}
+
+.map-title {
+  color: var(--accent-cream);
+  font-family: var(--font-heading);
+  margin-top: -16px;
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+
+.map-container {
+  width: 100%;
+  height: 60vh; /* MAP BENERAN GEDE */
+  min-height: 450px;
+  max-height: 700px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* --- COPYRIGHT --- */
+.copyright {
+  text-align: center;
+  margin-top: -30px;
+  font-weight: 600;
+}
+
+.copyright p {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/* Responsif untuk Layar HP */
+@media (max-width: 768px) {
+  .concept-section,
+  .footer-container,
+  .gallery-grid {
+    flex-direction: column; /* Ubah baris jadi kolom */
+    display: flex;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 Gambar per baris */
+  }
+
+  .col-center {
+    margin: 30px 0;
+  }
+
+  .contact-box {
+    text-align: left; /* Di HP rata kiri lebih enak dibaca */
+  }
+}
