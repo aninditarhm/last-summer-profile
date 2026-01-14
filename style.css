@@ -641,23 +641,76 @@ body {
 
 /* Responsif untuk Layar HP */
 @media (max-width: 768px) {
-  .concept-section,
-  .footer-container,
-  .gallery-grid {
-    flex-direction: column; /* Ubah baris jadi kolom */
-    display: flex;
+  .navbar {
+    flex-wrap: wrap;
+    padding: 16px 20px;
   }
 
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* 1 Gambar per baris */
+  .nav-links {
+    display: none; /* sembunyi dulu */
   }
 
-  .col-center {
-    margin: 30px 0;
+  .btn-visit {
+    margin-top: 0;
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  .logo-text {
+    font-size: 28px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 120px 0 80px;
+  }
+
+  .big-title {
+    font-size: 22vw;
+    -webkit-text-stroke: 4px var(--accent-cream);
+    top: 120px;
+  }
+
+  .main-cup {
+    height: 320px;
+    transform: translateY(0);
+  }
+
+  .date-badge {
+    font-size: 14px;
+    padding: 6px 16px;
+    top: 95%;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    height: 260px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .percent {
+    font-size: 80px;
+  }
+
+  .offer-header h3 {
+    font-size: 32px;
+  }
+
+  .offer-item h4 {
+    font-size: 22px;
+  }
+
+  .offer-item p {
+    font-size: 16px;
   }
 
   .contact-box {
-    text-align: left; /* Di HP rata kiri lebih enak dibaca */
+    padding: 30px 20px;
   }
 }
